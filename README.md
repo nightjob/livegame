@@ -4,7 +4,7 @@ In this game, you can choose a class, level up, cast spells, and attack mobs unt
 
 `Game logic dictates a character's damage and is calculated using this algorithm:`
 
-- If a character has an activePet, we take the activePet's damage as starting value, and add it to the character's magic damage.
+- If character has an activePet, we take the activePet's damage as starting value, and add it to the character's magic damage.
 - If a character is casting a spell, we take the spell's damage and add it to the character's magic damage.
 - If a character has neither an activePet, nor a spell, we take their weapon's damage, and add it to the character's attack damage.
 
