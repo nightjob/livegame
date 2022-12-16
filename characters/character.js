@@ -1,3 +1,5 @@
+const config = require("../config/classNames")
+
 class Character {
     constructor(name, className, attack, magic, defense, speed, health, mana) {
         this.name = name;
@@ -17,19 +19,19 @@ class Character {
 
     levelUp() {
         this.level = this.level + 1;
-        if(this.className === "mage") {
+        if(this.className === config.className.MageClassName) {
             console.log("Your", this.className, "has leveled up!", this.className, "is now", this.level);
             this.magic = this.magic + 1;
             this.speed = this.speed + 1;
             this.health = this.health + 10;
             this.mana = this.mana +20;
-        } else if(this.className === "paladin") {
+        } else if(this.className === config.className.PaladinClassName) {
             console.log("Your", this.className, "has leveled up!", this.className, "is now", this.level);
             this.attack = this.attack + 1;
             this.magic = this.magic + 1;
             this.health = this.health +20;
             this.mana = this.mana +10;
-        } else if(this.className === "warlock") {
+        } else if(this.className === config.className.WarlockClassName) {
             console.log("Your", this.className, "has leveled up!", this.className, "is now", this.level);
             this.magic = this.magic + .5;
             this.defense = this.defense + 1;
@@ -39,12 +41,23 @@ class Character {
         } 
     }
 
-    getDamage() {
-        if(this.activePet) {
+    getDamage(spellName) {
+        if(spellName) {
+            const spell = this.spells.find(s => s.name === spellName);
+            if(!spell) return 0;
+            if(this.mana < spell.mana) {
+                console.log("not enough mana");
+                return 0;
+            }
+
+            this.mana -= spell.mana;
+            return spell.power + this.magic + this.speed;
+        } else if(this.activePet) {
             const petDamage = this.activePet.damage;
-            const magicDamage = this.magic;
-            const speedDamage = this.speed;
-            return petDamage + magicDamage + speedDamage;
+            return petDamage + this.magic + this.speed;
+        } else if(this.equippedWeapon) {
+            const weaponDamage = this.equippedWeapon.damage;
+            return this.attack + weaponDamage;
         }
     }
 
