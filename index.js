@@ -37,3 +37,10 @@ playButton.addEventListener("click", function () {
   video.style.display = "block";
   video.play();
 });
+
+function displayCharacterInfo(character) {
+  const container = document.getElementById("character-info");
+  let characterInfoString = `Name: ${character.getName()}`;
+  characterInfoString += `Level: ${character.getLevel()} ${character.getClassName()}`;
+  container.innerHTML = characterInfoString;
+}

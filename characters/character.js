@@ -99,6 +99,18 @@ class Character {
       }
     }
   }
+
+  getName() {
+    return this.name;
+  }
+
+  getClassName() {
+    return this.ClassName;
+  }
+
+  getLevel() {
+    return this.level;
+  }
 }
 
 module.exports = Character;
