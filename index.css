@@ -1,0 +1,51 @@
+#header {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  color: #333;
+}
+
+h2 {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+#character-select-container {
+  text-align: center;
+}
+
+button {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 600;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+#character-info-container {
+  text-align: center;
+}
+
+#character-info {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  color: #333;
+}
+
+.video-container {
+  position: absolute;
+  left: 50%;
+  bottom: 50;
+  transform: translate(-50%, 0);
+}

@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <div id="header"><h1>Button Masher</h1></div>
+    <br />
+  </head>
+
+  <body id="body">
+    <div id="character-select-container">
+      <h2>Choose a class</h2>
+
+      <button id="mage" data-class="mage">Level 1 Mage</button><br /><br />
+      <button id="paladin" data-class="paladin">Level 1 Paladin<img class="button-icons" src="paladinmed.png"></button
+      ><br /><br />
+      <button id="warlock" data-class="warlock">Level 1 Warlock</button
+      ><br /><br />
+      <button id="play-button">Level 1 Rug Doctor</button>
+      <br><br>
+
+
+    <!-- this will hide on start via the "display:none;" -->
+
+    <div id="character-info-container" style="display: none">
+      <h1>Character Info</h1>
+
+      <div id="character-info"></div>
+    </div>
+
+    <div class="video-container">
+      <video id="video" width="800" height="800" style="display: none;">
+        <source src="rpg.mp4" type="video/mp4" />
+        <source src="movie.ogg" type="video/ogg" />
+      </video>
+    </div>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>
